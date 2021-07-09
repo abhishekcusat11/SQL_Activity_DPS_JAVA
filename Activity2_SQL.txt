@@ -1,0 +1,38 @@
+1->1. Display the name of movies, movie type is starts with Drama.
+Ans:-select * from movie where Movietype like 'Drama%';
+
+2. Display the movies acted by actor Ayushmann.
+Ans:-select * from movie where Heroname='Ayushmann';
+
+3.Display the count of movies, having length above 18.
+Ans:- select count(Length) from movie where length>18;
+
+4. Display the movie having minimum length.
+Ans:-  select Moviename , min(length) from movie;
+
+5. Display all the details of movie, the language that first name starts with ‘T’.
+Ans:- Select * from movie where language Like 'T%';
+
+6. Display the movie name, hero name, heroine name whose having a maximum length.
+Ans:- select Moviename,Heroname ,Heroine  , max(length) from movie;
+
+7. Display the movie name, hero name, heroine name the movie released after 15 march 2018.
+Ans:- select Moviename,Heroname ,Heroine from movie where Releasedate ='15/03/2018';
+
+8. Display the count of thriller movies
+Ans:- select count(Movietype) from movie where Movietype='Thriller';
+
+9. Display the count of movies whose released before 15 march 2018.
+Ans:- 
+
+
+10. Display the release date of the movie name ‘Zero’.
+Ans:- select Releasedate from movie where Moviename='Zero';
+
+11.Display the actor name that acted with ‘Amy’.
+Ans:- select Heroname from movie where Heroine='Amy';
+
+12.Display the Count of maximum movies released in a month of October.
+Ans:- select 
+
+13. Display the movienames whose production id is same for different languages.
