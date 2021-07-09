@@ -34,7 +34,7 @@ Ans:- select Heroname from movie where Heroine='Amy';
 
 12.Display the Count of maximum movies released in a month of October.
 Ans:- select count(movieid) from movie where month(releasedate) LIKE '---10%';
-Note:- Because i've done by thaking date as varchar:
+Note:- Because i've done by taking date as varchar:
        If date datatype is taken than Query will be:
        select count(movieid) from movie where month releasedate=10;
 
