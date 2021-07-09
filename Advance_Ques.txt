@@ -16,3 +16,8 @@ SELECT productions.Productionid, Productionname, COUNT(Productionname) AS COUNT 
 |         9091 | Arkamediaworks             |     3 |
 +--------------+----------------------------+-------+
 10 rows in set (0.01 sec)
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+2. Write the query to display production name, owner name have produced more than 2 movies.
