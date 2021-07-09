@@ -23,7 +23,7 @@ Ans:- select Moviename,Heroname ,Heroine from movie where Releasedate ='15/03/20
 Ans:- select count(Movietype) from movie where Movietype='Thriller';
 
 9. Display the count of movies whose released before 15 march 2018.
-Ans:- 
+Ans:- select count(movieid) from movie where releasedate < '2018-3-15';
 
 
 10. Display the release date of the movie name ‘Zero’.
@@ -33,6 +33,11 @@ Ans:- select Releasedate from movie where Moviename='Zero';
 Ans:- select Heroname from movie where Heroine='Amy';
 
 12.Display the Count of maximum movies released in a month of October.
-Ans:- select 
+Ans:- select count(movieid) from movie where month(releasedate) LIKE '---10%';
+Note:- Because i've done by thaking date as varchar:
+       If date datatype is taken than Query will be:
+       select count(movieid) from movie where month releasedate=10;
+
 
 13. Display the movienames whose production id is same for different languages.
+Ans:-  select moviename from movie where productionid in (select productionid from movie group by language having count(productionid) > 1);
