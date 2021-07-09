@@ -1,0 +1,18 @@
+1. Write the query to display productionid, production name with total number movies produced by each?
+Ans:- 
+SELECT productions.Productionid, Productionname, COUNT(Productionname) AS COUNT FROM movie INNER JOIN productions WHERE productions.Productionid=movie.Productionid GROUP BY movie.Productionid;
++--------------+----------------------------+-------+
+| Productionid | Productionname             | COUNT |
++--------------+----------------------------+-------+
+|         1010 | Hari Om Entertainment      |     1 |
+|         1854 | Junglee Picture            |     1 |
+|         1899 | Viacom18 Studios           |     6 |
+|         1988 | Red Chillies Entertainment |     1 |
+|         2341 | CRM                        |     1 |
+|         6773 | Hombale Flims              |     1 |
+|         7682 | Mythri Movie Makers        |     1 |
+|         7882 | DVV Entertainments         |     1 |
+|         8892 | Lyca Productions           |     2 |
+|         9091 | Arkamediaworks             |     3 |
++--------------+----------------------------+-------+
+10 rows in set (0.01 sec)
