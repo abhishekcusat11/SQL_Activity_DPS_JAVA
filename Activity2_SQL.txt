@@ -1,3 +1,44 @@
+                                                    Activity 1
+
+CREATE TABLE productions (
+    Productionid INT(5) PRIMARY KEY, 
+    Productionname VARCHAR(30), 
+    Address VARCHAR(40), 
+    Startyear YEAR, 
+    Ownername VARCHAR(20) 
+    );
+
+                                                        Activity 2
+
+CREATE TABLE movie (
+    Movieid INT(5) PRIMARY KEY, 
+    Moviename VARCHAR(30), 
+    Heroname VARCHAR(30), 
+    Heroine VARCHAR(30),
+    Releaseddate DATE, 
+    Language VARCHAR(15), 
+    Length INT(2), 
+    Movietype VARCHAR(25), 
+    Productionid INT(5),
+    FOREIGN KEY (Productionid) REFERENCES productions(Productionid)
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 1->1. Display the name of movies, movie type is starts with Drama.
 Ans:-select * from movie where Movietype like 'Drama%';
 
