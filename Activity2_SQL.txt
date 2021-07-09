@@ -1,4 +1,4 @@
-                                                    Activity 1
+                                                       Activity 1
 
 CREATE TABLE productions (
     Productionid INT(5) PRIMARY KEY, 
