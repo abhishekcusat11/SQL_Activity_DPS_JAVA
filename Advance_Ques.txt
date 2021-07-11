@@ -21,3 +21,58 @@ SELECT productions.Productionid, Productionname, COUNT(Productionname) AS COUNT 
 ----------------------------------------------------------------------------------------------------------------------------------
 
 2. Write the query to display production name, owner name have produced more than 2 movies.
+
+Ans:-  SELECT Productionname, Ownername, Moviename FROM movie INNER JOIN productions ON movie.Productionid=productions.Productionid GROUP BY Productionname HAVING COUNT(Productionname)>2;
++------------------+------------------+--------------------------+
+| Productionname   | Ownername        | Moviename                |
++------------------+------------------+--------------------------+
+| Viacom18 Studios | Ajit Andhare     | Padmavaat                |
+| Arkamediaworks   | Shobu Yarlagadda | Bahubali - The Beginning |
++------------------+------------------+--------------------------+
+2 rows in set (0.00 sec)
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+3. Write the query to display production name, owner name have produced maximum movies
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+4. Write the query to display the moviename, heroname and productionname acted in the producer name= ’Subaskaran’.
+Ams:-  select movie.Moviename, movie.Heroname,productions.Productionname from movie inner join productions ON movie.Productionid=productions.Productionid where Ownername="Subaskaran";
++----------------+-------------+------------------+
+| Moviename      | Heroname    | Productionname   |
++----------------+-------------+------------------+
+| Khaidi No. 150 | chiranjeevi | Lyca Productions |
+| 2.0            | Rajnikanth  | Lyca Productions |
++----------------+-------------+------------------+
+2 rows in set (0.02 sec)
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+5. Write the query to display the moviename, heroname whose productionid ends with 82.
+Ans:- 
+SELECT Moviename, Heroname FROM movie WHERE Productionid LIKE "%82";
++------------------+-------------+
+| Moviename        | Heroname    |
++------------------+-------------+
+| Rangasthalam     | Ram Charan  |
+| Bharath Ane nenu | Mahesh Babu |
++------------------+-------------+
+2 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+6. Write the query to display the productionname, ownername who has not produced the movie.
+Ans:-
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+7. Write the query to display the productionname, ownername who has not produced the ‘hindi’ movie 
