@@ -94,7 +94,15 @@ Ans:  select Productionname, Ownername FROM movie inner join productions ON prod
 ----------------------------------------------------------------------------------------------------------------------------------
 8.Write the query name to display the heroinename who acted in the different productions but not in same production id.
 
-Ans: 
+Ans: SELECT Heroine FROM movie GROUP BY Heroine HAVING COUNT(movie.Productionid)>1;
++---------+
+| Heroine |
++---------+
+| Andrea  |
+| Amy     |
++---------+
+2 rows in set (0.00 sec)
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -110,3 +118,16 @@ Ans:
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
+
+11.
+Write the query to display the productionname, producername who has not produced any movie.
+
+mysql>
+
+SELECT Productionname, Ownername FROM movie RIGHT JOIN productions ON productions.Productionid=movie.Productionid WHERE Movieid IS NULL;
++----------------+-----------+
+| Productionname | Ownername |
++----------------+-----------+
+| STP            | Sree      |
++----------------+-----------+
+1 row in set (0.00 sec)
