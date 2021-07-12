@@ -75,4 +75,38 @@ Ans:-
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
-7. Write the query to display the productionname, ownername who has not produced the ‘hindi’ movie 
+7. Write the query to display the productionname, ownername who has not produced the ‘hindi’ movie .
+Ans:  select Productionname, Ownername FROM movie inner join productions ON productions.Productionid=movie.Productionid where Language <>'Hindi' group by (Ownername);;
++---------------------+------------------+
+| Productionname      | Ownername        |
++---------------------+------------------+
+| Viacom18 Studios    | Ajit Andhare     |
+| CRM                 | Manohar          |
+| Hombale Flims       | Vijay            |
+| Mythri Movie Makers | Naveen Yerneni   |
+| DVV Entertainments  | DVV Danayya      |
+| Lyca Productions    | Subaskaran       |
+| Arkamediaworks      | Shobu Yarlagadda |
++---------------------+------------------+
+7 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+8.Write the query name to display the heroinename who acted in the different productions but not in same production id.
+
+Ans: 
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+9.Write the query to display the heroname who acted in maximum languages.
+Ans: 
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+10. Write the query to display the production name, owner name who has produced movie for more languages.
+Ans: 
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
