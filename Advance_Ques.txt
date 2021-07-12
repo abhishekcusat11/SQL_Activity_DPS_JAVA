@@ -36,7 +36,13 @@ Ans:-  SELECT Productionname, Ownername, Moviename FROM movie INNER JOIN product
 ----------------------------------------------------------------------------------------------------------------------------------
 3. Write the query to display production name, owner name have produced maximum movies
 
-
+Ans:- SELECT productions.Productionname, Ownername FROM movie INNER JOIN productions WHERE productions.Productionid=movie.Productionid GROUP BY movie.Productionid HAVING COUNT(*)>0 ORDER BY COUNT(*) DESC LIMIT 1;
++------------------+--------------+
+| Productionname   | Ownername    |
++------------------+--------------+
+| Viacom18 Studios | Ajit Andhare |
++------------------+--------------+
+1 row in set (0.00 sec)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +77,13 @@ SELECT Moviename, Heroname FROM movie WHERE Productionid LIKE "%82";
 6. Write the query to display the productionname, ownername who has not produced the movie.
 Ans:-
 
-
+SELECT Productionname, Ownername FROM movie RIGHT JOIN productions ON productions.Productionid=movie.Productionid WHERE Movieid IS NULL;
++----------------+-----------+
+| Productionname | Ownername |
++----------------+-----------+
+| STP            | Sree      |
++----------------+-----------+
+1 row in set (0.00 sec)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -109,7 +121,13 @@ Ans: SELECT Heroine FROM movie GROUP BY Heroine HAVING COUNT(movie.Productionid)
 ----------------------------------------------------------------------------------------------------------------------------------
 9.Write the query to display the heroname who acted in maximum languages.
 Ans: 
-
+ Select Heroname FROM movie GROUP BY Heroname ORDER BY COUNT(*) DESC LIMIT 1;
++-----------+
+| Heroname  |
++-----------+
+| Siddharth |
++-----------+
+1 row in set (0.00 sec)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------

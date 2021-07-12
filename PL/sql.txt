@@ -1,0 +1,15 @@
+mysql> delimiter $$
+mysql> create procedure sal1k()
+    -> begin
+    -> select AGE from customers where SALARY in(select SALARY from customers where SALARY =1000);
+    -> end $$
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+mysql> call sal1k();
++------+
+| AGE  |
++------+
+|   35 |
++------+
+1 row in set (0.01 sec)
