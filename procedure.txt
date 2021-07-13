@@ -1,0 +1,14 @@
+delimiter $$
+create procedure sal1k()
+begin
+SELECT AGE,ADDRESS FROM CUSTOMERS WHERE SALARY IN(SELECT SALARY FROM CUSTOMERS WHERE SALARY=2000.00);
+end $$
+delimiter ;
+call sal1k();
+
++------+----------+------+-----------+
+| ID   | NAME     | AGE  | ADDRESS   |
++------+----------+------+-----------+
+|    1 | Ramesh   |   35 | Ahmedabad | 
++------+----------+------+-----------+
+1 rows in set (0.01 sec)
