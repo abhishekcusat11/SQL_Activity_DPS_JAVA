@@ -12,3 +12,46 @@ call sal1k();
 |    1 | Ramesh   |   35 | Ahmedabad | 
 +------+----------+------+-----------+
 1 rows in set (0.01 sec)
+
+
+
+
+==========================================================================
+==========================================================================
+mysql> select * from customers;
++------+----------+------+-----------+--------+-------------+
+| ID   | NAME     | AGE  | ADDRESS   | SALARY | creditLimit |
++------+----------+------+-----------+--------+-------------+
+|    1 | Ramesh   |   35 | Ahmedabad | 1000   |        5000 |
+|    2 | Khilan   |   25 | Delhi     | 1500   |        7000 |
+|    3 | kaushik  |   23 | Kota      | 2000   |        9000 |
+|    4 | Chaitali |   25 | Mumbai    | 6500   |       11000 |
+|    5 | Hardik   |   27 | Bhopal    | 8500   |       13000 |
+|    6 | Komal    |   22 | MP        | 4500   |       15000 |
++------+----------+------+-----------+--------+-------------+
+6 rows in set (0.00 sec)
+
+mysql> delimiter $$
+mysql> create procedure Cust_ID()
+    -> begin
+    -> select NAME, AGE, SALARY, if(creditLimit>7000,'Premium','General') as Level
+    -> from customers;
+    -> end $$
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call Cust_ID() $$
++----------+------+--------+---------+
+| NAME     | AGE  | SALARY | Level   |
++----------+------+--------+---------+
+| Ramesh   |   35 | 1000   | General |
+| Khilan   |   25 | 1500   | General |
+| kaushik  |   23 | 2000   | Premium |
+| Chaitali |   25 | 6500   | Premium |
+| Hardik   |   27 | 8500   | Premium |
+| Komal    |   22 | 4500   | Premium |
++----------+------+--------+---------+
+6 rows in set (0.01 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
