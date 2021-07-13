@@ -1,3 +1,7 @@
+==========================================================================
+1. Create a procedure and call it.
+==========================================================================
+
 delimiter $$
 create procedure sal1k()
 begin
@@ -16,8 +20,13 @@ call sal1k();
 
 
 
+
+
 ==========================================================================
+2. Create a procedure and use if else.
 ==========================================================================
+
+
 mysql> select * from customers;
 +------+----------+------+-----------+--------+-------------+
 | ID   | NAME     | AGE  | ADDRESS   | SALARY | creditLimit |
@@ -54,4 +63,39 @@ mysql> call Cust_ID() $$
 
 Query OK, 0 rows affected (0.02 sec)
 
-mysql>
+
+
+
+
+=================================================================================
+3. Create a procedure and use case statement on it.
+=================================================================================
+
+mysql> delimiter $$
+mysql> create procedure customer_ranking()
+    -> begin
+    -> select ID, NAME, AGE,SALARY,creditLimit,
+    -> case
+    -> when SALARY=1000 then 'Part-time'
+    -> when SALARY=1500 then 'Casual'
+    -> when SALARY=2000 then 'Seasonal employees'
+    -> when SALARY=6500 then 'Temporary employees'
+    -> when SALARY=8500 then 'Leased employees'
+    -> when SALARY=4500 then 'Leased employees'
+    -> end as type_of_emp
+    -> from customers;
+    -> end $$
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call customer_ranking() $$
++------+----------+------+--------+-------------+---------------------+
+| ID   | NAME     | AGE  | SALARY | creditLimit | type_of_emp         |
++------+----------+------+--------+-------------+---------------------+
+|    1 | Ramesh   |   35 | 1000   |        5000 | Part-time           |
+|    2 | Khilan   |   25 | 1500   |        7000 | Casual              |
+|    3 | kaushik  |   23 | 2000   |        9000 | Seasonal employees  |
+|    4 | Chaitali |   25 | 6500   |       11000 | Temporary employees |
+|    5 | Hardik   |   27 | 8500   |       13000 | Leased employees    |
+|    6 | Komal    |   22 | 4500   |       15000 | Leased employees    |
++------+----------+------+--------+-------------+---------------------+
+6 rows in set (0.01 sec)
